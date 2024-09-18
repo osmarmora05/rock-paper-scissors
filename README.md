@@ -1,0 +1,1 @@
+Este proyecto forma parte del plan de estudio de [The Odin Project](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors).
