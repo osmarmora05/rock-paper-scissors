@@ -1,0 +1,122 @@
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 100px;
+    width: 100%;
+    height: 50%;
+    gap: 64px;
+    animation: 0.5s fadeInUp;
+}
+
+.buttons-hands {
+    display: block;
+    position: relative;
+}
+
+.buttons-hands>img:last-child {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 150px;
+    height: 150px;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.buttons-hands:hover>img:last-child {
+    transform: rotate(-20deg);
+    scale: 1.2;
+}
+
+.buttons-hands:hover {
+    filter: drop-shadow(5px 5px 5px var(--black));
+}
+
+#button-next-round>span,
+#button-restart>span {
+    transition: all 0.1s ease-in-out;
+}
+
+#button-next-round:hover>span,
+#button-restart:hover>span {
+    transform: rotate(-5deg);
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@media (width <=1536px) {
+    .game-buttons {
+        padding-bottom: 50px;
+    }
+
+    .buttons-hands>img:first-child {
+        width: 162px;
+        height: 166px;
+    }
+
+    .buttons-hands>img:last-child {
+        width: 130px;
+        height: 130px;
+    }
+
+}
+
+@media (width <=1024px) {
+    .game-buttons {
+        gap: 42px;
+    }
+
+    .buttons-hands>img:first-child {
+        width: 142px;
+        height: 146px;
+    }
+
+    .buttons-hands>img:last-child {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (width <=768px),
+(height <=844px) {
+    .game-buttons {
+        gap: 32px;
+    }
+
+    .buttons-hands>img:first-child {
+        width: 112px;
+        height: 116px;
+    }
+
+    .buttons-hands>img:last-child {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (width <=390px) {
+    .game-buttons {
+        gap: 16px;
+    }
+
+    .buttons-hands>img:first-child {
+        width: 82px;
+        height: 86px;
+    }
+
+    .buttons-hands>img:last-child {
+        width: 50px;
+        height: 50px;
+    }
+}

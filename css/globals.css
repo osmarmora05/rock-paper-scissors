@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Seymour+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Seymour One", sans-serif;
+}
