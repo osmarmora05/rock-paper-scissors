@@ -1,0 +1,618 @@
+.game-layout {
+    display: flex;
+    background-color: var(--main-bg-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-layout__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-bg-color);
+}
+
+.game-layout__side {
+    display: block;
+    width: 20%;
+    position: relative;
+}
+
+.arm-ai {
+    position: absolute;
+    rotate: 50deg;
+    right: 50px;
+    bottom: -400px;
+}
+
+.arm-ai__hand-img {
+    position: absolute;
+    z-index: 10000;
+    width: 320px;
+    height: 340px;
+}
+
+.arm-ai__hand-img.rock {
+    top: -180px;
+    right: 10px;
+}
+
+.arm-ai__hand-img.paper {
+    top: -180px;
+    right: -24px;
+}
+
+.arm-ai__hand-img.scissors {
+    top: -200px;
+    right: -24px;
+}
+
+.arm-ai__arm-img {
+    position: relative;
+    width: 381px;
+    height: 1156px;
+}
+
+.game-layout__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    z-index: 1;
+}
+
+.arm-human {
+    position: absolute;
+    rotate: -45deg;
+    right: -120px;
+    bottom: -380px;
+}
+
+.arm-human__hand-img {
+    position: absolute;
+    z-index: 1000;
+    width: 320px;
+    height: 340px;
+}
+
+.arm-human__hand-img.rock {
+    rotate: -30deg;
+    top: -120px;
+    right: 30px;
+}
+
+.arm-human__hand-img.paper {
+    rotate: -12deg;
+    top: -130px;
+    right: 85px;
+}
+
+.arm-human__hand-img.scissors {
+    top: -150px;
+    right: 79px;
+    rotate: -5deg;
+}
+
+.arm-human__arm-img {
+    position: relative;
+    width: 381px;
+    height: 1156px
+}
+
+.arm-ai,
+.arm-human {
+    transition: right 0.28s ease-in-out, bottom 0.28s ease-in-out;
+}
+
+.arm-ai.movement {
+    animation: ai-arm__movement-keyframes 0.8s ease-in-out infinite;
+}
+
+.arm-ai__hand-img.movement {
+    animation: ai-hand__movement-keyframes 0.8s ease-out infinite reverse;
+}
+
+.arm-human.movement {
+    animation: human-arm__movement-keyframes 4.5s ease-in-out infinite;
+}
+
+.arm-human__hand-img.movement {
+    animation: human-hand__movement-keyframes 4.5s ease-out infinite;
+}
+
+@keyframes ai-arm__movement-keyframes {
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes ai-hand__movement-keyframes {
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes human-arm__movement-keyframes {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes human-hand__movement-keyframes {
+    50% {
+        transform: rotate(6deg);
+    }
+}
+
+/*refactor: BEM: Use modifier?*/
+
+/*Ai*/
+.arm-ai.raise {
+    animation: ai-arm__raise-keyframes 0.28s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.arm-ai__hand-img.tilt {
+    animation: ai-hand__tilt-keyframes 0.28s ease-out;
+    animation-fill-mode: forwards;
+    left: -5px;
+}
+
+.arm-ai.up-down {
+    animation: ai-arm__up-down-keyframes 0.28s ease-in-out alternate;
+    animation-iteration-count: calc(5);
+    animation-fill-mode: forwards;
+}
+
+.arm-ai__hand-img.up-down {
+    animation: ai-hand__up-down-keyframes 0.28s ease-in-out alternate;
+    animation-iteration-count: calc(5);
+    animation-fill-mode: forwards;
+}
+
+.arm-ai.stretch {
+    right: -72px;
+    transform: rotate(0deg);
+}
+
+.arm-ai__hand-img.reveal-move {
+    animation: ai-hand__reveal-move-keyframes 0.28s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+
+.arm-human.raise {
+    animation: human-arm__raise-keyframes 0.28s ease-out;
+    animation-fill-mode: forwards;
+}
+
+/*Human*/
+.arm-human.raise {
+    animation: human-arm__raise-keyframes 0.28s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.arm-human__hand-img.tilt {
+    animation: human-hand__tilt-keyframes 0.28s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.arm-human.up-down {
+    animation: human-arm__up-down-keyframes 0.28s ease-in-out alternate;
+    animation-iteration-count: calc(5);
+    animation-fill-mode: forwards;
+}
+
+.arm-human__hand-img.up-down {
+    animation: human-hand__up-down-keyframes 0.28s ease-in-out alternate;
+    animation-iteration-count: calc(5);
+    animation-fill-mode: forwards;
+}
+
+.arm-human.stretch {
+    right: 40px;
+    transform: rotate(0deg);
+}
+
+.arm-human__hand-img.reveal-move {
+    animation: human-hand__reveal-move-keyframes 0.28s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/*Ai*/
+@keyframes ai-arm__raise-keyframes {
+    50% {
+        transform: rotate(-22deg);
+    }
+
+    80% {
+        transform: rotate(-24deg);
+    }
+
+    100% {
+        transform: rotate(-26deg);
+    }
+}
+
+@keyframes ai-hand__tilt-keyframes {
+    100% {
+        transform: rotate(-38deg);
+    }
+}
+
+@keyframes ai-arm__up-down-keyframes {
+    0% {
+        transform: rotate(-26deg);
+    }
+
+    100% {
+        transform: rotate(4deg);
+    }
+}
+
+@keyframes ai-hand__up-down-keyframes {
+    0% {
+        transform: rotate(-20deg);
+    }
+
+    100% {
+        transform: rotate(4deg);
+    }
+}
+
+@keyframes ai-arm__stretch-keyframes {
+    to {
+        right: -72px;
+    }
+}
+
+@keyframes ai-hand__reveal-move-keyframes {
+    to {
+        transform: rotate(-2deg);
+    }
+}
+
+/*Human*/
+@keyframes human-arm__raise-keyframes {
+    50% {
+        transform: rotate(22deg);
+    }
+
+    80% {
+        transform: rotate(24deg);
+    }
+
+    100% {
+        transform: rotate(26deg);
+    }
+}
+
+@keyframes human-hand__tilt-keyframes {
+    100% {
+        transform: rotate(18deg);
+    }
+}
+
+@keyframes human-arm__up-down-keyframes {
+    0% {
+        transform: rotate(26deg);
+    }
+
+    100% {
+        transform: rotate(-4deg);
+    }
+}
+
+
+@keyframes human-hand__up-down-keyframes {
+    0% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(-4deg);
+    }
+}
+
+@keyframes human-arm__stretch-keyframes {
+    to {
+        right: 5px;
+    }
+}
+
+@keyframes human-hand__reveal-move-keyframes {
+    to {
+        transform: rotate(2deg);
+    }
+}
+
+
+
+@keyframes circle-in-center {
+    from {
+        clip-path: circle(0%);
+    }
+
+    to {
+        clip-path: circle(125%);
+    }
+}
+
+[transition-style="in:circle:center"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-center both;
+}
+
+@media (width <=1536px) {
+
+    /*Ai*/
+    .arm-ai {
+        right: 100px;
+    }
+
+    .arm-ai__hand-img {
+        width: 250px;
+        height: 280px;
+    }
+
+    .arm-ai__hand-img.rock {
+        top: -100px;
+        right: 20px;
+    }
+
+    .arm-ai__hand-img.paper {
+        top: -130px;
+        right: -12px;
+    }
+
+    .arm-ai__hand-img.scissors {
+        top: -130px;
+        right: -15px;
+    }
+
+    .arm-ai__arm-img {
+        width: 301px;
+        height: 1076px;
+    }
+
+    .arm-ai.stretch {
+        right: 10px;
+    }
+
+    /*Human*/
+    .arm-human {
+        right: -140px;
+    }
+
+    .arm-human__hand-img {
+        width: 250px;
+        height: 280px;
+    }
+
+    .arm-human__hand-img.rock {
+        top: -40px;
+    }
+
+    .arm-human__hand-img.paper {
+        top: -100px;
+        right: 75px;
+    }
+
+    .arm-human__hand-img.scissors {
+        top: -100px;
+        right: 59px;
+
+    }
+
+    .arm-human__arm-img {
+        width: 301px;
+        height: 1076px;
+    }
+
+    .arm-human.stretch {
+        right: -10px;
+    }
+
+}
+
+@media (width <=1024px),
+(height <=844px) {
+
+    /*Ai*/
+    .arm-ai {
+        right: 140px;
+    }
+
+    .arm-ai__hand-img {
+        width: 180px;
+        height: 200px;
+    }
+
+    .arm-ai__hand-img.rock {
+        top: -50px;
+        right: 20px;
+    }
+
+    .arm-ai__hand-img.paper {
+        top: -80px;
+        right: -12px;
+    }
+
+    .arm-ai__hand-img.scissors {
+        top: -70px;
+        right: -15px;
+    }
+
+    .arm-ai__arm-img {
+        width: 221px;
+        height: 996px;
+    }
+
+    .arm-ai.stretch {
+        right: 100px;
+    }
+
+    /*Human*/
+    .arm-human {
+        right: -180px;
+    }
+
+    .arm-human__hand-img {
+        width: 180px;
+        height: 200px;
+    }
+
+    .arm-human__hand-img.rock {
+        top: -20px;
+    }
+
+    .arm-human__hand-img.paper {
+        top: -56px;
+        right: 45px;
+        rotate: -8deg;
+    }
+
+    .arm-human__hand-img.scissors {
+        top: -50px;
+        right: 20px;
+        rotate: 15deg;
+
+    }
+
+    .arm-human__arm-img {
+        width: 221px;
+        height: 996px;
+    }
+
+    .arm-human.stretch {
+        right: -100px;
+    }
+}
+
+@media (width <=768px) {
+
+    /*Ai*/
+    .arm-ai {
+        right: 200px;
+    }
+
+    .arm-ai__hand-img {
+        width: 140px;
+        height: 160px;
+    }
+
+    .arm-ai__arm-img {
+        width: 181px;
+        height: 956px;
+    }
+
+    .arm-ai__hand-img.paper {
+        top: -50px;
+        right: -2px;
+    }
+
+    .arm-ai.stretch {
+        right: 150px;
+    }
+
+    /*Human*/
+    .arm-human {
+        right: -220px;
+    }
+
+    .arm-human__hand-img {
+        width: 140px;
+        height: 160px;
+    }
+
+    .arm-human__hand-img.paper {
+        top: -38px;
+        right: 38px;
+        rotate: -8deg;
+    }
+
+    .arm-human__hand-img.scissors {
+        top: -30px;
+    }
+
+    .arm-human__arm-img {
+        width: 181px;
+        height: 956px;
+    }
+
+    .arm-human.stretch {
+        right: -150px;
+    }
+
+
+}
+
+@media (width <=390px) {
+
+    /*Ai*/
+    .arm-ai {
+        right: 220px;
+        rotate: 52deg;
+    }
+
+    .arm-ai__hand-img {
+        width: 70px;
+        height: 90px;
+    }
+
+    .arm-ai__arm-img {
+        width: 111px;
+        height: 866px;
+    }
+
+    .arm-ai__hand-img.rock {
+        top: -10px;
+    }
+
+    .arm-ai__hand-img.paper {
+        top: 0px;
+        right: 10px;
+    }
+
+    .arm-ai__hand-img.scissors {
+        top: 0px;
+        right: 10px;
+    }
+
+    .arm-ai.stretch {
+        right: 190px;
+    }
+
+    /*Human*/
+    .arm-human {
+        rotate: -58deg;
+        right: -290px;
+    }
+
+    .arm-human__hand-img {
+        width: 70px;
+        height: 90px;
+    }
+
+    .arm-human__arm-img {
+        width: 111px;
+        height: 866px;
+    }
+
+    .arm-human__hand-img.rock {
+        top: 15px;
+        left: 15px;
+    }
+
+    .arm-human__hand-img.paper {
+        top: 0px;
+        right: 26px;
+    }
+
+    .arm-human__hand-img.scissors {
+        top: 0px;
+    }
+
+    .arm-human.stretch {
+        right: -270px;
+    }
+}
