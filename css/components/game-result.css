@@ -70,7 +70,7 @@
     }
 }
 
-@media (width <=390px) {
+@media (width <= 480px) {
     .game-result__title {
         font-size: 32px;
     }

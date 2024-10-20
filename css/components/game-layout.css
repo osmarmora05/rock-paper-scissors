@@ -546,7 +546,7 @@
 
 }
 
-@media (width <=390px) {
+@media (width <= 480px) {
 
     /*Ai*/
     .arm-ai {
