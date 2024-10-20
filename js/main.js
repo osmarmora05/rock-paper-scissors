@@ -54,9 +54,9 @@ $buttonsHands.forEach(function (btn) {
 
         setTimeout(() => {
             $imageHandIa.src =
-                "../assets/img/ai-arm/big/" + playedAi.toLowerCase() + "-ai.png";
+                "./assets/img/ai-arm/big/" + playedAi.toLowerCase() + "-ai.png";
             $imageHandHuman.src =
-                "../assets/img/human-arm/big/" + playedHuman.toLowerCase() + "-human.png";
+                "./assets/img/human-arm/big/" + playedHuman.toLowerCase() + "-human.png";
             $aiScore.textContent = winnerAi;
             $humanScore.textContent = winnerHuman;
             $winningTitle.textContent = winningTitle;
@@ -117,8 +117,8 @@ function resetCss() {
     $handHuman.classList.add("rock")
 
 
-    $imageHandIa.src = "/assets/img/ai-arm/big/rock-ai.png";
-    $imageHandHuman.src = "/assets/img/human-arm/big/rock-human.png";
+    $imageHandIa.src = "./assets/img/ai-arm/big/rock-ai.png";
+    $imageHandHuman.src = "./assets/img/human-arm/big/rock-human.png";
 }
 
 function exeAnimation() {
