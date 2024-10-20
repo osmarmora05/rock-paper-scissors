@@ -8,6 +8,8 @@ This project is part of [The Odin Project](https://www.theodinproject.com/lesson
 
 ## 📷 Screenshots
 
+https://github.com/user-attachments/assets/ce7d3566-f003-4628-9496-e0c8c92080dc
+
 <p align="center">
 Desktop
 </p>
@@ -29,7 +31,7 @@ Mobile
 <img src ="./screenshots/Mobile.jpeg">
 
 ## 🎮 Demo
--  [Live demo here!]()
+-  [Live demo here!](https://osmarmora05.github.io/rock-paper-scissors/)
 
 ## 🛠️ Tech Stack
 -  HTML
